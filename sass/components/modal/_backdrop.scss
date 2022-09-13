@@ -1,0 +1,43 @@
+.backdrop-block {
+    position: fixed;
+    z-index: 2; 
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    opacity: 1;
+    transition: opacity map-get($map: $transition, $key: 'time-forms') map-get($map: $transition, $key: 'time');
+
+    &.is-hidden {
+        opacity: 0;
+        pointer-events: none;  
+        visibility: hidden; 
+    }
+
+    &.is-hidden .backdrop-block__form {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    &.is-hidden .backdrop-block__form {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+.backdrop-block__title {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+
+    @media screen and (min-width: 1200px)  {
+        line-height: 1.15;
+    }
+}

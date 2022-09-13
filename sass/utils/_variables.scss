@@ -1,0 +1,30 @@
+$background-color: (
+    primary:#FFFFFF,
+    secondary:#F5F4FA, 
+    third:#2F303A,
+    photo: #C4C4C4,
+    border: #EEEEEE,
+    accent:#2196F3,
+);
+
+$logo-color: (
+    primary: #000000,
+    second: #FFFFFF,
+    accent:#2196F3,
+    icons: #AFB1B8,
+    mobile: #212121,
+);
+
+
+$text-color: (
+    primary: #212121,
+    secondary: #757575,
+    third: #FFFFFF,
+    accent:#2196F3, 
+);
+
+$transition: (
+    time: 250ms,
+    time-forms: 250ms,
+    function: cubic-bezier(0.4, 0, 0.2, 1),
+)

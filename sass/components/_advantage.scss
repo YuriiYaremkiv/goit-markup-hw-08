@@ -1,0 +1,72 @@
+.advantage__list {
+    margin: 0 auto;
+    padding: 0;
+
+    list-style: none;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+}
+
+.advantage__item {
+
+    @media screen and (max-width: 767px) {
+        max-width: 450px;
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px){
+        width: 354px;
+
+
+        &:not(:nth-child(2n)) {
+            margin-right: 30px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 270px;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    margin: 0 auto;
+
+
+    
+}
+
+.advantage__tumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    height: 120px;
+    margin-bottom: 30px;
+  
+    background-color: map-get($map: $background-color, $key: 'secondary');
+    border-radius: 4px;
+}
+
+.advantage__subtitle {
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+.advantage__description {
+    line-height: 1.71;
+    color: map-get($map: $text-color, $key: 'secondary')
+}

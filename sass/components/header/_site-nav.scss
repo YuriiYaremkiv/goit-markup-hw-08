@@ -1,0 +1,79 @@
+.site-nav,
+.site-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+    }
+}
+
+.site-nav {
+    margin-right: auto;
+}
+
+.site-nav__item {
+    @media screen and (max-width: 767px) {
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        &:not(:last-child) {
+            margin-right: 50px;
+        }
+    }  
+}
+
+.site-nav__link {
+    display: block;
+    position: relative;
+
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.18;
+    text-decoration: none;
+    font-style: normal;
+    letter-spacing: 0.02em;
+    color: map-get($map: $text-color, $key: 'primary');
+  
+    &.current {
+        color: map-get($map: $text-color, $key: 'accent');
+    }
+
+    @media screen and (min-width: 768px) {  
+        display: block;
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.14;
+        letter-spacing: 0.02em;
+        color: map-get($map: $text-color, $key: 'primary');
+
+        transition: color map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
+
+        //Ефекти при наведенні
+        &:hover,
+        &:focus,
+        &.current {
+            color: map-get($map: $text-color, $key: 'accent');
+        }
+
+        //Для підкреслення поточної сторінки добав в .site-nav__link додатковий клас current
+        &.current::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: -1px;  
+            height: 4px;      
+
+            background-color: map-get($map: $text-color, $key: 'accent');
+            border-radius: 2px;
+        }
+    }
+}

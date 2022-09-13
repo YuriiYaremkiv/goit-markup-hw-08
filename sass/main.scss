@@ -1,0 +1,38 @@
+@import './utils/variables';
+@import './base/global';
+@import './base/general-styles';
+@import './components/logo';
+
+//Підключення header
+@import './components/header/site-nav';
+@import './components/header/contact-nav';
+@import './components/hidden-socials-networks';
+@import './components/menu-btn';
+
+//Підключення секції "Герой"
+@import './components/hero';
+
+//Підключення секції "Наші переваги"
+@import './components/advantage';
+
+//Підключення секції "Чим займаємось"
+@import './components/work';
+
+//Підключення секції "Наша команда"
+@import './components/team';
+
+//Підключення секції "Постійні клієнти"
+@import './components/clients';
+
+//Підключення footer
+@import './components/footer/address-block';
+@import './components/socials-block';
+@import './components/footer/subscription-block';
+
+//Модальне вікно
+@import './components/modal/backdrop';
+@import './components/modal/client-form';
+
+//Підключення portfolio
+@import './components/filter_category';
+@import './components/projects-block';

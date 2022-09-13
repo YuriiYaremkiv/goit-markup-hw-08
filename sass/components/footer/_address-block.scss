@@ -1,0 +1,36 @@
+.address-block__list {
+    margin: 0;
+    padding: 0;
+
+}
+
+.address-block__link {
+    display: block;
+
+    line-height: 1.71;
+    text-decoration: none;
+    font-style: normal;
+    text-align: center;
+
+    @media screen and (min-width: 1200px) {
+        text-align: left;
+    }
+
+    color: rgba(255, 255, 255, 0.6);
+
+    //Зміна кольору для footer
+    &.make {
+        color: map-get($map: $text-color, $key: 'third');
+
+        transition: color map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
+    }
+
+    &:hover,
+    &:focus {
+        color: map-get($map: $text-color, $key: 'accent');
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+}

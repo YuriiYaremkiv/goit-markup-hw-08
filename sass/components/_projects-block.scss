@@ -1,0 +1,133 @@
+.project-block__list { 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.project-block__item {
+    @media screen and (max-width: 767px) {
+        max-width: 450px;
+                
+        margin-right: auto;
+        margin-left: auto;
+     
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        width: 354px;
+        
+        &:not(:nth-child(2n)) {
+            margin-right: 30px;
+        }
+        
+        &:not(:nth-last-child(1)) {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 370px;
+
+        &:not(:nth-child(3n)) {
+            margin-right: 30px;
+        }
+
+        &:not(:nth-last-child(-n+3)) {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.project-block__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    text-decoration: none;
+    font-style: normal;
+    box-shadow: none;
+
+    transition: box-shadow map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
+
+    &:hover,
+    &:focus {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+
+    &:hover .project-block__description,
+    &:focus .project-block__description {
+        transform: translateY(0%);
+    } 
+}
+
+.project-block__tumb {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.project-block__image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+.project-block__description {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 63px 24px 24px 24px;
+
+    font-size: 18px;
+    line-height: 1.56;
+    color: map-get($map: $text-color, $key: 'third');
+
+
+    background-color:rgba(33, 150, 243, 0.9);
+    transform: translateY(101%);
+
+    transition: transform map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
+}
+
+.project-block__border {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+
+    padding: 20px 24px 20px 24px;
+
+    border-right: 1px solid map-get($map: $background-color, $key: 'border');
+    border-bottom: 1px solid map-get($map: $background-color, $key: 'border');
+    border-left: 1px solid map-get($map: $background-color, $key: 'border');
+}
+
+.project-block__subtitle {
+    margin-bottom: 4px;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2.0;
+    letter-spacing: 0.06em;
+    color: map-get($map: $text-color, $key: 'primary');
+}
+
+.project-block__category {
+    font-size: 16px;
+    line-height: 1.88;
+    color: map-get($map: $text-color, $key: 'secondary');
+}

@@ -1,0 +1,222 @@
+.backdrop-block__form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    min-height: 581px;
+    padding: 40px;
+
+    @media screen and (max-width: 1199px) {
+        max-width: 450px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 528px;
+    }
+
+
+    background-color: map-get($map: $background-color, $key: 'primary');
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+                0px 1px 1px rgba(0, 0, 0, 0.14),
+                0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    transform: translate(-50%, -50%) scale(1);
+
+    transition: transform map-get($map: $transition, $key: 'time-forms') map-get($map: $transition, $key: 'time');
+}
+
+//Кнопка закриття модального вікна
+.backdrop-block__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: map-get($map: $background-color, $key: 'primary');
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    &--icon {
+        fill: map-get($map: $logo-color, $key: 'primary');
+    }
+
+    &:hover .backdrop-block__close--icon,
+    &:focus .backdrop-block__close--icon {
+        fill: map-get($map: $logo-color, $key: 'accent');
+    }
+}
+
+.client-form__label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: map-get($map: $text-color, $key: 'secondary');
+    user-select: none;
+}
+
+.client-form__tumb {
+    position: relative;
+
+    margin-bottom: 10px;
+}
+
+.client-form__input,
+.client-form__text {
+    width: 100%;
+    padding: 10px 16px 10px 42px;
+
+    font-size: 14px;
+    line-height: 1.29;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    outline: none;
+    border-radius: 4px;
+    
+    transition: border map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
+
+    &:focus {
+        border: 1px solid map-get($map: $text-color, $key: 'accent');
+    }
+
+    &:focus ~ .client-form__icon {
+        fill: map-get($map: $logo-color, $key: 'accent');
+    }
+}
+
+.client-form__icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+
+    fill: map-get($map: $text-color, $key: 'primary');
+
+    transform: translateY(-50%);
+    transition: fill map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
+}
+
+.client-form__text {
+    width: 100%;
+    height: 120px;
+
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    
+    resize: none;
+
+    &::placeholder {
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.01em;
+        color: rgba(117, 117, 117, 0.5);
+    }
+}
+
+.client-form__tumb--check {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 1200px) {
+        padding-left: 12px;
+    }
+}
+
+.client-form__checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    @media screen and (min-width: 1200px) {
+        margin-right: 10px;
+    }
+
+    &:checked ~ .client-form__checkbox-icon {
+        fill: map-get($map: $logo-color, $key: 'accent');
+        border: none;
+    }
+}
+
+.client-form__checkbox-icon {
+    margin-right: 8px;
+    width: 16px;
+    height: 15px;
+    
+    fill: map-get($map: $logo-color, $key: 'second');
+
+    border: 2px solid map-get($map: $text-color, $key: 'primary');
+    border-radius: 2px;
+
+    transition: fill map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function'),
+                border map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
+}
+
+.client-form__label--check {
+    display: flex;
+    align-items: center;
+    margin: 0 5px 0 0;
+
+    font-size: 12px;
+    line-height: 1.17;
+    color: map-get($map: $text-color, $key: 'secondary');
+    user-select: none;
+
+    @media screen and (min-width: 1200px) {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+.client-form__link {
+    text-decoration-line: underline;
+    color: map-get($map: $text-color, $key: 'accent');
+
+    font-size: 12px;
+    line-height: 1.17;
+
+    @media screen and (min-width: 1200px) {
+        font-size: 14px;
+        line-height: 1.71;
+    }
+}
+
+.client-form__btn {
+    display: block;
+    margin: 0 auto;
+    padding: 9px 52px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: map-get($map: $text-color, $key: 'third');
+
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+    background-color: map-get($map: $text-color, $key: 'accent');
+
+    cursor: pointer;
+    
+    transition: background-color map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function'),
+                box-shadow map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
+
+    &:hover,
+    &:focus {
+        background-color: #188CE8;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
+}

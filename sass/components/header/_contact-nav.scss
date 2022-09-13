@@ -1,0 +1,108 @@
+.contact-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+
+    @media screen and (max-width: 767px) {
+        margin-top: auto;
+    }
+
+    @media screen and (min-width: 1200px) {
+        flex-direction: row;
+    }
+}
+
+.contact-nav__item {
+    flex-direction: row-reverse;
+
+    &:not(:last-child) {
+        @media screen and (min-width: 1200px) {
+            margin-right: 50px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {     
+    
+        &:last-child {
+            margin-bottom: 32px;
+
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 40px;
+            letter-spacing: 0.02em;
+            color: map-get($map: $text-color, $key: 'accent');
+        }     
+        
+        &:first-child {
+            margin-bottom: 64px;
+
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            letter-spacing: 0.02em;
+            color: map-get($map: $text-color, $key: 'secondary');
+        }
+
+        @media screen and (min-width: 768px) {
+            font-size: 12px;
+            line-height: 1.17;
+            color: map-get($map: $text-color, $key: 'secondary');
+        }
+    }
+
+    @media screen and (min-width: 768px) {  
+        color: map-get($map: $text-color, $key: 'secondary');
+    }
+
+}
+
+.contact-nav__link {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    @media screen and (min-width: 1200px) {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: currentColor;
+
+    transition: color map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
+
+    &:hover,
+    &:focus {
+        color: map-get($map: $text-color, $key: 'accent');
+    }
+
+    &:hover .contact-nav__icon,
+    &:focus .contact-nav__icon {
+        fill: map-get($map: $text-color, $key: 'accent');
+    }
+
+}
+
+.contact-nav__icon {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    margin-right: 10px;
+
+    fill: map-get($map: $text-color, $key: 'secondary');
+
+    transition: fill map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
+}
