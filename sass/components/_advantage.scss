@@ -7,7 +7,7 @@
     @media screen and (min-width: 768px) {
         display: flex;
         flex-wrap: wrap;
-
+        gap: 30px;
     }
 
 }
@@ -24,25 +24,13 @@
 
     @media screen and (min-width: 768px) and (max-width: 1199px){
         width: 354px;
-
-
-        &:not(:nth-child(2n)) {
-            margin-right: 30px;
-        }
     }
 
     @media screen and (min-width: 1200px) {
         width: 270px;
-
-        &:not(:last-child) {
-            margin-right: 30px;
-        }
     }
 
     margin: 0 auto;
-
-
-    
 }
 
 .advantage__tumb {
@@ -64,6 +52,10 @@
     font-weight: 700;
     font-size: 14px;
     text-align: center;
+
+    @media screen and (min-width: 768px) {
+        text-align: left;
+    }
 }
 
 .advantage__description {

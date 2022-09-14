@@ -4,10 +4,11 @@
     list-style: none;
 
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
 
     @media screen and (max-width: 767px) {
+        flex-direction: column-reverse;
         margin-top: auto;
     }
 
@@ -18,6 +19,19 @@
 
 .contact-nav__item {
     flex-direction: row-reverse;
+
+    /* Зміна розміру іконки */
+    @media screen and (min-width: 1200px) {
+        &:first-child .contact-nav__icon {
+        width: 16px;
+        height: 12px;
+        }
+
+        &:last-child .contact-nav__icon {
+            width: 10px;
+            height: 16px;
+        }
+    }
 
     &:not(:last-child) {
         @media screen and (min-width: 1200px) {
@@ -31,10 +45,15 @@
             margin-bottom: 32px;
 
             font-family: 'Roboto';
-            font-style: normal;
             font-weight: 500;
-            font-size: 34px;
-            line-height: 40px;
+            font-size: 24px;
+            line-height: 1.17;
+
+            @media screen and (min-width: 480px) {
+                font-size: 34px;
+                line-height: 1.67;
+            }
+            
             letter-spacing: 0.02em;
             color: map-get($map: $text-color, $key: 'accent');
         }     
@@ -76,10 +95,14 @@
     }
 
     font-weight: 500;
-    font-style: normal;
     letter-spacing: 0.02em;
     text-decoration: none;
     color: currentColor;
+
+    @media screen and (min-width: 768px) and (max-width:1199px) {
+        font-size: 12px;
+        line-height: 1.17;
+    }
 
     transition: color map-get($map: $transition, $key: 'time') map-get($map: $transition, $key: 'function');
 

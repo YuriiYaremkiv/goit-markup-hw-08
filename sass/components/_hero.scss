@@ -8,7 +8,7 @@
 
     @media screen and (max-width: 479px) {
         max-width: 479px;
-        height: 400px;
+        height: auto;
 
         background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
                         url(../images/hero-img/hero-img-mobile.jpg);    
@@ -21,7 +21,7 @@
 
     @media screen and (min-width: 480px) and (max-width: 767px) {
         max-width: 767px;
-        height: 400px;
+        height: auto;
 
         background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
                         url(../images/hero-img/hero-img-tablet.jpg);    
@@ -34,7 +34,7 @@
 
     @media screen and (min-width: 768px) {
         max-width: 1600px;
-        height: 600px;
+        height: auto;
 
         background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
                         url(../images/hero-img/hero-img-desktop.jpg);    

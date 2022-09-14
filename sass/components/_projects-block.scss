@@ -91,9 +91,17 @@
     width: 100%;
     height: 100%;
     padding: 63px 24px 24px 24px;
-
+    
     font-size: 18px;
     line-height: 1.56;
+
+    @media screen and (max-width: 479px) {
+        padding: 24px;
+
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
     color: map-get($map: $text-color, $key: 'third');
 
 
@@ -108,7 +116,6 @@
     flex-direction: column;
     flex-grow: 1;
 
-
     padding: 20px 24px 20px 24px;
 
     border-right: 1px solid map-get($map: $background-color, $key: 'border');
@@ -122,6 +129,7 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 2.0;
+
     letter-spacing: 0.06em;
     color: map-get($map: $text-color, $key: 'primary');
 }
